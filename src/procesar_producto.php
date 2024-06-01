@@ -1,9 +1,9 @@
 <?php
 // Configuración de la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "puntodeventa";
+$servername = "fdb1034.awardspace.net"; // Cambia esto con el servidor proporcionado por AwardSpace
+$username = "4472420_puntodeventa"; // Cambia esto con el usuario proporcionado por AwardSpace
+$password = "productos1"; // Cambia esto con la contraseña proporcionada por AwardSpace
+$dbname = "4472420_puntodeventa"; // Cambia esto con el nombre de la base de datos proporcionado por AwardSpace
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
