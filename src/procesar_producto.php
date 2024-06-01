@@ -14,27 +14,26 @@ if ($conn->connect_error) {
 }
 
 // Verificar que todos los datos necesarios estén presentes en $_POST
-if (!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['nombre']) && !empty($_POST['apellido'])) {
+if (!empty($_POST['nombre']) && !empty($_POST['descripcion']) && !empty($_POST['precio']) && !empty($_POST['cantidad']) && !empty($_POST['proveedor'])) {
     // Obtener los datos del formulario
-    $email = $_POST['email'];
-    $password = $_POST['password'];
     $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
+    $descripcion = $_POST['descripcion'];
+    $precio = $_POST['precio'];
+    $cantidad = $_POST['cantidad'];
+    $proveedor = $_POST['proveedor'];
 
     // Validar y sanitizar datos
-    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-    $password = mysqli_real_escape_string($conn, $password);
     $nombre = mysqli_real_escape_string($conn, $nombre);
-    $apellido = mysqli_real_escape_string($conn, $apellido);
-
-    // Hashear la contraseña
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $descripcion = mysqli_real_escape_string($conn, $descripcion);
+    $precio = mysqli_real_escape_string($conn, $precio);
+    $cantidad = mysqli_real_escape_string($conn, $cantidad);
+    $proveedor = mysqli_real_escape_string($conn, $proveedor);
 
     // Insertar datos en la tabla
-    $sql = "INSERT INTO usuarios (email, password, nombre, apellido) VALUES ('$email', '$hashed_password', '$nombre', '$apellido')";
+    $sql = "INSERT INTO productos (nombre, descripcion, precio, cantidad, proveedor_id) VALUES ('$nombre', '$descripcion', '$precio', '$cantidad', '$proveedor')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Nuevo usuario registrado exitosamente";
+        echo "Nuevo producto registrado exitosamente";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
