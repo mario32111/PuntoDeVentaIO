@@ -29,8 +29,9 @@ if ($result->num_rows > 0) {
     // Verificar la contraseña
     $row = $result->fetch_assoc();
     if (password_verify($password, $row['password'])) {
-        // Contraseña correcta
-        echo "Inicio de sesión exitoso. ¡Bienvenido, " . $row['nombre'] . "!";
+        // Contraseña correcta, redirigir a inicio.html
+        header("Location: ../view/inicio.html");
+        exit(); // Asegurarse de que el script se detenga aquí
     } else {
         // Contraseña incorrecta
         echo "Contraseña incorrecta. Inténtalo de nuevo.";

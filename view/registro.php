@@ -11,7 +11,7 @@
         <div class="sidebar">
             <h2 class="menu-title">Menú</h2>
             <ul class="menu-list">
-                <li><a href="index.html" class="menu-item">Ventas</a></li>
+                <li><a href="inicio.html" class="menu-item">Ventas</a></li>
                 <li><a href="registro.php" class="menu-item active">Registrar Producto</a></li>
                 <li><a href="proveedores.php" class="menu-item">Gestion de proveedores</a></li>
                 <li><a href="historial.html" class="menu-item">Historial de Ventas</a></li>
