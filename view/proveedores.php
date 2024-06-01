@@ -14,7 +14,7 @@
                 <li><a href="inicio.html" class="users-menu-item">Ventas</a></li>
                 <li><a href="registro.php" class="users-menu-item">Registrar Producto</a></li>
                 <li><a href="proveedores.php" class="users-menu-item users-active">Gestión de Proveedores</a></li>
-                <li><a href="historial.html" class="users-menu-item">Historial de Ventas</a></li>
+                <li><a href="historial.php" class="users-menu-item">Historial de Ventas</a></li>
             </ul>
             <button class="logout-button">Cerrar Sesión</button>
         </div>
