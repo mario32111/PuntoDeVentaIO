@@ -277,3 +277,35 @@ th {
 .logout-button:hover {
     background-color: #a93226;
 }
+
+.sidebar {
+    width: 50px;
+    transition: width 0.3s;
+}
+.sidebar.active {
+    width: 250px;
+}
+.sidebar ul li:nth-child(1) a span{
+    content: url('../assets/img/compras.png');
+    width: 20px;
+    filter: invert(100%);
+}
+.sidebar ul li:nth-child(2) a span{
+    content: url('../assets/img/producto.png');
+    width: 20px;
+    filter: invert(100%);
+}
+.sidebar ul li:nth-child(3) a span{
+    content: url('../assets/img/proveedores.png');
+    width: 20px;
+    filter: invert(100%);
+}
+.sidebar ul li:nth-child(4) a span{
+    content: url('../assets/img/historial.png');
+    width: 20px;
+    filter: invert(100%);
+}
+
+.sidebar-icono{
+    margin: 6px;
+}

@@ -9,17 +9,15 @@
 </head>
 <body>
     <div class="users-container">
-        <div class="users-sidebar">
-            <h2 class="users-menu-title">Menú</h2>
-            <ul class="users-menu-list">
-                <li><a href="inicio.html" class="users-menu-item">Ventas</a></li>
-                <li><a href="registro.php" class="users-menu-item">Registrar Producto</a></li>
-                <li><a href="proveedores.php" class="users-menu-item users-active">Gestión de Proveedores</a></li>
-                <li><a href="historial.php" class="users-menu-item">Historial de Ventas</a></li>
+    <div class="sidebar">
+            <h2>M</h2>
+            <ul>
+                <li><a href="inicio.html"><span></span></a></li>
+                <li><a href="registro.php"><span></span></a></li>
+                <li><a href="proveedores.php"><span></span></a></li>
+                <li><a href="historial.php"><span></span></a></li>
             </ul>
-
             <button class="logout-button"><a href="../src/logout.php">Cerrar sesion</a></button>
-
         </div>
         <div class="users-main-content">
             <h1 class="users-page-title">Proveedores</h1>

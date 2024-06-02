@@ -9,17 +9,15 @@
 </head>
 <body>
     <div class="container">
-        <div class="sidebar">
-            <h2 class="menu-title">Menú</h2>
-            <ul class="menu-list">
-                <li><a href="inicio.html" class="menu-item">Ventas</a></li>
-                <li><a href="registro.php" class="menu-item active">Registrar Producto</a></li>
-                <li><a href="proveedores.php" class="menu-item">Gestion de proveedores</a></li>
-                <li><a href="historial.php" class="menu-item">Historial de Ventas</a></li>
+    <div class="sidebar">
+            <h2>M</h2>
+            <ul>
+                <li><a href="inicio.html"><span></span></a></li>
+                <li><a href="registro.php"><span></span></a></li>
+                <li><a href="proveedores.php"><span></span></a></li>
+                <li><a href="historial.php"><span></span></a></li>
             </ul>
-
             <button class="logout-button"><a href="../src/logout.php">Cerrar sesion</a></button>
-
         </div>
         <div class="main-content centered">
             <form class="registration-form" action="../src/procesar_producto.php" method="POST">

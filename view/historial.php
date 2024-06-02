@@ -44,17 +44,15 @@ $result = $conn->query($sql);
 </head>
 <body>
     <div class="container">
-        <div class="sidebar">
-            <h2>Menú</h2>
+    <div class="sidebar">
+            <h2>M</h2>
             <ul>
-                <li><a href="inicio.html">Ventas</a></li>
-                <li><a href="registro.php">Registrar Producto</a></li>
-                <li><a href="proveedores.php">Gestion de proveedores</a></li>
-                <li><a href="historial.html">Historial de Ventas</a></li>
+                <li><a href="inicio.html"><span></span></a></li>
+                <li><a href="registro.php"><span></span></a></li>
+                <li><a href="proveedores.php"><span></span></a></li>
+                <li><a href="historial.php"><span></span></a></li>
             </ul>
-
             <button class="logout-button"><a href="../src/logout.php">Cerrar sesion</a></button>
-
         </div>
         <div class="main-content">
             <h1>Historial de Ventas</h1>
