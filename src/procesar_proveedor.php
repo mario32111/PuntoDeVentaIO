@@ -13,6 +13,16 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
+// Iniciar sesión
+session_start();
+
+// Verificar que el user_id esté en la sesión
+if (!isset($_SESSION['user_id'])) {
+    die("Error: No se ha iniciado sesión o no se ha establecido el ID del usuario.");
+}
+
+$user_id = $_SESSION['user_id']; // Obtener el user_id de la sesión
+
 // Verificar que todos los datos necesarios estén presentes en $_POST
 if (!empty($_POST['nombre']) && !empty($_POST['contacto']) && !empty($_POST['telefono']) && !empty($_POST['email']) && !empty($_POST['direccion'])) {
     // Obtener los datos del formulario
@@ -30,7 +40,7 @@ if (!empty($_POST['nombre']) && !empty($_POST['contacto']) && !empty($_POST['tel
     $direccion = mysqli_real_escape_string($conn, $direccion);
 
     // Insertar datos en la tabla
-    $sql = "INSERT INTO proveedores (nombre, contacto, telefono, email, direccion) VALUES ('$nombre', '$contacto', '$telefono', '$email', '$direccion')";
+    $sql = "INSERT INTO proveedores (nombre, contacto, telefono, email, direccion, user_id) VALUES ('$nombre', '$contacto', '$telefono', '$email', '$direccion', '$user_id')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Nuevo proveedor registrado exitosamente";

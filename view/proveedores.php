@@ -16,7 +16,9 @@
                 <li><a href="proveedores.php" class="users-menu-item users-active">Gestión de Proveedores</a></li>
                 <li><a href="historial.php" class="users-menu-item">Historial de Ventas</a></li>
             </ul>
-            <button class="logout-button">Cerrar Sesión</button>
+
+            <button class="logout-button"><a href="../src/logout.php">Cerrar sesion</a></button>
+
         </div>
         <div class="users-main-content">
             <h1 class="users-page-title">Proveedores</h1>
@@ -26,7 +28,7 @@
                     <label for="nombre" class="users-form-label">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" class="users-form-input" required><br><br>
                     
-                    <label for="contacto" class="users-form-label">Nombre del Contacto:</label>
+                    <label for="contacto" class="users-form-label">:</label>
                     <input type="text" id="contacto" name="contacto" class="users-form-input" required><br><br>
 
                     <label for="telefono" class="users-form-label">Teléfono:</label>

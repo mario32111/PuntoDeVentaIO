@@ -29,7 +29,11 @@ if ($result->num_rows > 0) {
     // Verificar la contraseña
     $row = $result->fetch_assoc();
     if (password_verify($password, $row['password'])) {
-        // Contraseña correcta, redirigir a inicio.html
+        // Contraseña correcta, establecer el ID de usuario en la sesión
+        session_start();
+        $_SESSION['user_id'] = $row['id']; // Asumiendo que el id del usuario está en la columna 'id'
+        
+        // Redirigir a inicio.html
         header("Location: ../view/inicio.html");
         exit(); // Asegurarse de que el script se detenga aquí
     } else {

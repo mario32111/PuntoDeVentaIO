@@ -1,3 +1,37 @@
+<?php
+// Iniciar sesión
+session_start();
+
+// Verificar si el usuario ha iniciado sesión
+if (!isset($_SESSION['user_id'])) {
+    // Redirigir al usuario a la página de inicio de sesión si no ha iniciado sesión
+    header("Location: login.php");
+    exit(); // Asegurarse de que el script se detenga aquí
+}
+
+// Obtener el ID de usuario de la sesión
+$user_id = $_SESSION['user_id'];
+
+// Configuración de la base de datos
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "puntodeventa";
+
+// Crear conexión
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Obtener datos de ventas del usuario actual de la tabla "ventas"
+$sql = "SELECT producto_id, cantidad, fecha_venta, total, usuario_id FROM ventas WHERE usuario_id = '$user_id'";
+$result = $conn->query($sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,7 +50,9 @@
                 <li><a href="proveedores.php">Gestion de proveedores</a></li>
                 <li><a href="historial.html">Historial de Ventas</a></li>
             </ul>
-            <button class="logout-button">Cerrar Sesión</button>
+
+            <button class="logout-button"><a href="../src/logout.php">Cerrar sesion</a></button>
+
         </div>
         <div class="main-content">
             <h1>Historial de Ventas</h1>
@@ -32,23 +68,6 @@
                 </thead>
                 <tbody>
                     <?php
-                    // Configuración de la base de datos
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $dbname = "puntodeventa";
-                    // Crear conexión
-                    $conn = new mysqli($servername, $username, $password, $dbname);
-
-                    // Verificar conexión
-                    if ($conn->connect_error) {
-                        die("Conexión fallida: " . $conn->connect_error);
-                    }
-
-                    // Obtener datos de ventas de la tabla "ventas"
-                    $sql = "SELECT producto_id, cantidad, fecha_venta, total, usuario_id FROM ventas";
-                    $result = $conn->query($sql);
-
                     // Verificar si hay resultados
                     if ($result->num_rows > 0) {
                         // Output de los datos en la tabla HTML
@@ -62,7 +81,7 @@
                             echo "</tr>";
                         }
                     } else {
-                        echo "<tr><td colspan='5'>No hay ventas registradas.</td></tr>";
+                        echo "<tr><td colspan='5'>No hay ventas registradas para este usuario.</td></tr>";
                     }
 
                     // Cerrar conexión

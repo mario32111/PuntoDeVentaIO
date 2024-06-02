@@ -15,8 +15,10 @@
                 <li><a href="registro.php">Registrar Producto</a></li>
                 <li><a href="proveedores.php">Gestion de proveedores</a></li>
                 <li><a href="historial.php">Historial de Ventas</a></li>
+                
             </ul>
-            <button class="logout-button">Cerrar Sesión</button>
+            <button class="logout-button"><a href="../src/logout.php">Cerrar sesion</a></button>
+
         </div>
         <div class="main-content">
             <h1>Ventas</h1>
@@ -28,14 +30,14 @@
                 <input type="date" id="fecha_venta" name="fecha_venta" required><br><br>
 
                 <label for="producto-id">Producto ID:</label>
-                <input type="text" id="producto-id" name="producto-id" required><br><br>
+                <input type="text" id="producto-id" name="producto_id" required><br><br>
 
                 <label for="total">Total:</label>
                 <input type="text" id="total" name="total" required><br><br>
 
-                <label for="usuario-id">Usuario ID:</label>
-                <input type="text" id="usuario-id" name="usuario-id" required><br><br>
-
                 <button type="submit">Registrar Venta</button>
             </form>
-        </
+        </div>
+    </div>
+</body>
+</html>

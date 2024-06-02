@@ -16,7 +16,9 @@
                 <li><a href="proveedores.php" class="menu-item">Gestion de proveedores</a></li>
                 <li><a href="historial.php" class="menu-item">Historial de Ventas</a></li>
             </ul>
-            <button class="logout-button">Cerrar Sesión</button>
+
+            <button class="logout-button"><a href="../src/logout.php">Cerrar sesion</a></button>
+
         </div>
         <div class="main-content centered">
             <form class="registration-form" action="../src/procesar_producto.php" method="POST">

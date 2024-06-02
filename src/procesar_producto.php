@@ -13,6 +13,16 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
+// Iniciar sesión
+session_start();
+
+// Verificar que el user_id esté en la sesión
+if (!isset($_SESSION['user_id'])) {
+    die("Error: No se ha iniciado sesión o no se ha establecido el ID del usuario.");
+}
+
+$user_id = $_SESSION['user_id']; // Obtener el user_id de la sesión
+
 // Verificar que todos los datos necesarios estén presentes en $_POST
 if (!empty($_POST['nombre']) && !empty($_POST['descripcion']) && !empty($_POST['precio']) && !empty($_POST['cantidad']) && !empty($_POST['proveedor'])) {
     // Obtener los datos del formulario
@@ -30,7 +40,7 @@ if (!empty($_POST['nombre']) && !empty($_POST['descripcion']) && !empty($_POST['
     $proveedor = mysqli_real_escape_string($conn, $proveedor);
 
     // Insertar datos en la tabla
-    $sql = "INSERT INTO productos (nombre, descripcion, precio, cantidad, proveedor_id) VALUES ('$nombre', '$descripcion', '$precio', '$cantidad', '$proveedor')";
+    $sql = "INSERT INTO productos (nombre, descripcion, precio, cantidad, proveedor_id, user_id) VALUES ('$nombre', '$descripcion', '$precio', '$cantidad', '$proveedor', '$user_id')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Nuevo producto registrado exitosamente";
