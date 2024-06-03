@@ -6,10 +6,11 @@
     <title>Registrar Producto</title>
     <link rel="stylesheet" href="../style/app.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="container">
-    <div class="sidebar">
+        <div class="sidebar">
             <h2>M</h2>
             <ul>
                 <li><a href="inicio.html"><span></span></a></li>
@@ -19,7 +20,8 @@
             </ul>
             <button class="logout-button"><a href="../src/logout.php">Cerrar sesion</a></button>
         </div>
-        <div class="main-content centered">
+        <div class="users-main-content">
+            <h1>Productos</h1>
             <form class="registration-form" action="../src/procesar_producto.php" method="POST">
                 <label for="nombre" class="form-label">Nombre del Producto:</label>
                 <input type="text" id="nombre" name="nombre" class="form-input" required><br><br>
@@ -71,5 +73,6 @@
             </form>
         </div>
     </div>
+    <script src="../src/navbar.js"></script>
 </body>
 </html>

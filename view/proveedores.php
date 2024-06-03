@@ -6,10 +6,11 @@
     <title>Proveedores</title>
     <link rel="stylesheet" href="../style/app.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="users-container">
-    <div class="sidebar">
+        <div class="sidebar">
             <h2>M</h2>
             <ul>
                 <li><a href="inicio.html"><span></span></a></li>
@@ -27,7 +28,7 @@
                     <label for="nombre" class="users-form-label">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" class="users-form-input" required><br><br>
                     
-                    <label for="contacto" class="users-form-label">:</label>
+                    <label for="contacto" class="users-form-label">Contacto:</label>
                     <input type="text" id="contacto" name="contacto" class="users-form-input" required><br><br>
 
                     <label for="telefono" class="users-form-label">Teléfono:</label>
@@ -79,5 +80,6 @@
             </div>
         </div>
     </div>
+    <script src="../src/navbar.js"></script>
 </body>
 </html>

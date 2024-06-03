@@ -285,6 +285,7 @@ th {
 .sidebar.active {
     width: 250px;
 }
+
 .sidebar ul li:nth-child(1) a span{
     content: url('../assets/img/compras.png');
     width: 20px;

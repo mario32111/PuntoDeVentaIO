@@ -29,7 +29,6 @@ if ($conn->connect_error) {
 // Obtener datos de ventas del usuario actual de la tabla "ventas"
 $sql = "SELECT producto_id, cantidad, fecha_venta, total, usuario_id FROM ventas WHERE usuario_id = '$user_id'";
 $result = $conn->query($sql);
-
 ?>
 
 <!DOCTYPE html>
@@ -40,11 +39,11 @@ $result = $conn->query($sql);
     <title>Historial de Ventas</title>
     <link rel="stylesheet" href="../style/app.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="container">
-    <div class="sidebar">
+        <div class="sidebar">
             <h2>M</h2>
             <ul>
                 <li><a href="inicio.html"><span></span></a></li>
@@ -63,7 +62,7 @@ $result = $conn->query($sql);
                         <th>Cantidad</th>
                         <th>Fecha</th>
                         <th>Total</th>
-                        <th>Gestion de proveedores</th>
+                        <th>Usuario ID</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -91,5 +90,6 @@ $result = $conn->query($sql);
             </table>
         </div>
     </div>
+    <script src="../src/navbar.js"></script>
 </body>
 </html>
