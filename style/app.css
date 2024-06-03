@@ -265,6 +265,7 @@ th {
 .logout-button {
     display: block;
     width: 100%;
+    height: 30px;
     padding: 10px;
     background-color: #c0392b;
     color: white;
@@ -272,6 +273,7 @@ th {
     border-radius: 4px;
     margin-top: 20px;
     cursor: pointer;
+    position: relative;
 }
 
 .logout-button:hover {
@@ -309,4 +311,12 @@ th {
 
 .sidebar-icono{
     margin: 6px;
+}
+
+.i{
+    content: url('../assets/img/cerrar.png');
+    width: 20px;
+    position: relative;
+    left: -9px;
+    top: -5px;
 }
